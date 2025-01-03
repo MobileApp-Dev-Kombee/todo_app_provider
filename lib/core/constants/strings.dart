@@ -1,6 +1,6 @@
 class AppStrings {
   // App
-  static const String appName = 'Todo App';
+  static const String appName = 'TODO APP';
 
   // Home Screen
   static const String tasks = 'Tasks';

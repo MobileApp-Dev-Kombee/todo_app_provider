@@ -90,7 +90,7 @@ lib/
 Easily add tasks with an intuitive workflow.
 
 <p align="center">
-  <img src="screenshots/task_creation_flow.png" alt="Task Creation Flow" width="600"/>
+  <img src="screenshots/task_creation_flow.png" alt="Task Creation Flow" width="250"/>
 </p>
 
 ### ✅ Task Management
@@ -98,7 +98,7 @@ Easily add tasks with an intuitive workflow.
 Organize tasks seamlessly with advanced UI.
 
 <p align="center">
-  <img src="screenshots/task_management.png" alt="Task Management" width="600"/>
+  <img src="screenshots/task_management.png" alt="Task Management" width="250"/>
 </p>
 
 ### 🔍 Search & Filter
@@ -106,7 +106,13 @@ Organize tasks seamlessly with advanced UI.
 Find tasks quickly with dynamic filters.
 
 <p align="center">
-  <img src="screenshots/search_filter.png" alt="Search and Filter" width="600"/>
+  <img src="screenshots/search_filter.png" alt="Search and Filter" width="250"/>
+</p>
+
+Complete tasks quickly with Checkbox.
+
+<p align="center">
+  <img src="screenshots/complete_task.png" alt="Search and Filter" width="250"/>
 </p>
 
 ---
