@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search tasks...',
+                hintText: AppStrings.searchTasks,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 FilterChip(
-                  label: const Text('All'),
+                  label: const Text(AppStrings.all),
                   selected: _statusFilter == null,
                   onSelected: (selected) {
                     setState(() {

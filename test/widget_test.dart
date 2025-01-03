@@ -76,8 +76,8 @@ void main() {
       (WidgetTester tester) async {
     final task = TaskModel(
       id: '1',
-      title: 'Test Task',
-      description: 'Test Description',
+      title: AppStrings.testTask,
+      description: AppStrings.testDescription,
       createdAt: DateTime.now(),
       dueDate: DateTime.now().add(const Duration(days: 1)),
       status: TaskStatus.pending,
@@ -94,16 +94,22 @@ void main() {
       ),
     );
 
-    expect(find.text('Test Task'), findsOneWidget);
-    expect(find.text('Test Description'), findsOneWidget);
-    expect(find.text(TaskStatus.pending.value), findsOneWidget);
+    expect(find.text(AppStrings.testTask), findsOneWidget);
+    expect(find.text(AppStrings.testDescription), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byType(Chip),
+        matching: find.text(TaskStatus.pending.value),
+      ),
+      findsOneWidget,
+    );
   });
 
   test('TaskProvider can add task', () async {
     final task = TaskModel(
       id: '1',
-      title: 'Test Task',
-      description: 'Test Description',
+      title: AppStrings.testTask,
+      description: AppStrings.testDescription,
       createdAt: DateTime.now(),
       dueDate: DateTime.now(),
       status: TaskStatus.pending,
@@ -111,7 +117,7 @@ void main() {
 
     await taskProvider.addTask(task);
     expect(taskProvider.tasks.length, 1);
-    expect(taskProvider.tasks.first.title, 'Test Task');
+    expect(taskProvider.tasks.first.title, AppStrings.testTask);
   });
 
   test('TaskProvider can update task', () async {

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/core/enums/task_status.dart';
 import '../../data/models/task_model.dart';
 import '../providers/task_provider.dart';
+import '../../core/constants/colors.dart';
 
 class TaskCard extends StatelessWidget {
   final TaskModel task;
@@ -31,6 +32,10 @@ class TaskCard extends StatelessWidget {
           context.read<TaskProvider>().deleteTask(task.id);
         },
         child: ListTile(
+          tileColor: AppColors.background,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
           leading: Checkbox(
             value: task.status == TaskStatus.completed,
             onChanged: (bool? value) {
@@ -87,9 +92,9 @@ class TaskCard extends StatelessWidget {
   Color _getStatusColor(TaskStatus status) {
     switch (status) {
       case TaskStatus.completed:
-        return Colors.green.shade100;
+        return AppColors.completed;
       case TaskStatus.pending:
-        return Colors.orange.shade100;
+        return AppColors.pending;
     }
   }
 }
