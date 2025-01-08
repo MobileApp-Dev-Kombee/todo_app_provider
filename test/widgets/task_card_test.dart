@@ -62,9 +62,18 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(Checkbox));
-    await tester.pump();
+    // Wait for initial build
+    await tester.pumpAndSettle();
 
-    expect(taskProvider.tasks.first.status, TaskStatus.completed);
+    // Find and tap the checkbox
+    await tester.tap(find.byType(Checkbox));
+    await tester.pumpAndSettle();
+
+    // Verify the task status has changed
+    expect(
+      taskProvider.tasks.first.status,
+      TaskStatus.completed,
+      reason: 'Task status should be completed after tapping checkbox',
+    );
   });
 }

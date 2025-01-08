@@ -96,11 +96,15 @@ void main() {
       ),
     );
 
-    final pendingFilterChip = find.ancestor(
-      of: find.text(TaskStatus.pending.value),
-      matching: find.byType(FilterChip),
-    );
-    await tester.tap(pendingFilterChip.first);
+    // Wait for initial build
+    await tester.pumpAndSettle();
+
+    // Find and tap the FilterChip for pending tasks
+    final pendingChip = find.byWidgetPredicate((widget) =>
+        widget is FilterChip &&
+        (widget.label as Text).data == TaskStatus.pending.value);
+
+    await tester.tap(pendingChip);
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.pendingTask), findsOneWidget);
