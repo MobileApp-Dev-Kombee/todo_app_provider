@@ -51,7 +51,7 @@ lib/
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/todo_app.git
+   https://github.com/MobileApp-Dev-Kombee/todo_app_provider.git
    cd todo_app
    ```
 
